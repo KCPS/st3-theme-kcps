@@ -86,6 +86,7 @@ Another change you can make is to the colour of the scroll bar race.  In class "
 
 Both the text and the ui theme files contain quite a few settings.  While not an impossibly large number to learn, if you want to do much cusomization of yoru ST installation, you'll need to invest some time, probably a couple of weeks.  This learning curve, made shallow, by the paucity of documentation for both kinds of theme settings, is the only serious criticism I've run across of Sublime Theme.
 
-
+Tips & Tricks:
+1. When modifying colours for either your text or your ui themes, a good colour picking tool is essential.  This is the      one I use: http://www.colorpicker.com
 
 
