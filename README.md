@@ -15,13 +15,13 @@ Now navigate to this Packages directory and direct your attention to the archive
 
 Any of the dozen and a half other themes supplied in the Color Scheme - Default package can be chosen by replacing the "color_scheme" setting value with the name of another theme file in the archive.  Because of its popularity, ST2&3 have a strong user base, many of whom have created their own text themes, and published them on the Internet.  Look around and see what you like.  
 
-If you do find a text them you like, here are the steps to install it.  Recall above I mentioned ST3 creating another Packages directory in the user space under directory Sublime Text 3 in Windows Appliction Data area.  Under THIS Packages directory you will also find sub-directory User.  Copy your text theme file into User.  Open ST3 and from the Preferences menu select Settings - User.  This will open an editing tab or 'pane' in ST-ese entitled "Preferences.sublime-settings | User".  Let's say your then file is named Freesia.tmTheme, currently quite popular with ST users (.  Copy the following entry into the onto a line in the editing space:
+If you do find a text them you like, here are the steps to install it.  Recall above I mentioned ST3 creating another Packages directory in the user space under directory Sublime Text 3 in Windows Appliction Data area.  Under THIS Packages directory you will also find sub-directory User.  Copy your text theme file into User.  Open ST3 and from the Preferences menu select Settings - User.  This will open an editing tab or 'pane' in ST-ese entitled "Preferences.sublime-settings | User".  Let's say your then file is named Freesia.tmTheme, currently quite popular with ST users (https://github.com/nilium/st-theme-freesia).  Copy the following entry onto a line in the editing space:
 
 
 	// Sets the colors used within the text area
  	"color_scheme": "Packages/User/Fessia.tmTheme",
 
-(don't forget the comma!) and from the File many select Save or press Ctrl+S.  Your text will instantly change to the new color scheme, and if you hadn't already created your own user settings, a file called "Preferences.sublime-settings" will have been created for you in Packages/User.  I'll say more about customizing the text theme later.
+(don't forget the comma!) and from the File menu select Save, or just press Ctrl+S.  Your text will instantly change to the new color scheme, and if you hadn't already created your own user settings, a file called "Preferences.sublime-settings" will have been created for you in Packages/User.  I'll say more about customizing the text theme later.
 
 Before moving on, I will note that Packages/User is the directory where all user customizations are kept.  Preference settings such as the one we just altered are in a file there as are any text themes.  You can also keep custom versions of the user interface theme in files there, and the user interface is the topic to which I will next turn your attention.  But one last word about Packages/User.  Its importance is that it is never altered whenever you may install updates to the Sublime Text editor.  As a relatively recent application (created by Australian Jon Skinner c. 2007), updates adding features and correcting defects are still a frequent occurrence - 11, for example, in 2013.  After becoming familiar with ST3 you will likely accumulate a number of custom files which you will not want the next update to overwrite.  So stay out of the other directories that ST3 uses, keep to Packages/User.  Now to the user interface.
 
@@ -29,7 +29,21 @@ Despite the love and affection which has been lavished on ST3, evidenced by its 
 
 I mentioned the two puck files normal_thumb_vertical.png and normal_thumb_horizontal.png.  Where do they live? In package Theme - Default.sublime-package, installed along with the other packages in Program Files/Sublime Text 3/Packages.  Open the package in your archive tool and extract the two files into a working directory.  The images are very simple, so you can edit them with a simple graphics editor such as Microsoft Paint, which is what I did.  I blew up the images by a factor of 8 so that I could edit individual pixels easily, then re-coloured the image using three tones of turquoise.  After saving the modified file, you can add it back into the archive with your tool.  (You'll have to close ST3 first if it's open as it locks the packages it's using during execution.)  When you re-open ST3, you'll see the newly coloured pucks.
 
-You can modify any of the image files in the Theme - Default file this way to suit yourself.  Unless you're into computer graphic art with top notch tools, you may find this a bit tedious and painstaking.  You should also try out 
+You can modify any of the image files in the Theme - Default file this way to suit yourself.  Unless you're into computer graphic art with top notch tools, you may find this a bit tedious and painstaking.  You might want first to try out some of the other ui theme packages for ST.  Most can can be found on Git Hub and installed with the ST add-on Package Control tool.  I'll show you how to install and load this tool later.  Meanwhile, there's a simple manual workaround you can use. If you haven't already, install git on your workstation and open a Git Bash shell.  Enter:
+
+$ cd /path/to/sublime/Packages  (e.g. /Program Files/Sublime Text 3/Packages - whatever your actual path is.)
+$ git clone git@github.com:nilium/st-theme-freesia.git
+
+This will install directory 'st-theme-freesia' in Packages along with some sub-directories containing image files for the various widgets on the user interface.  With the freesia repository cloned, you can now hop into your preferences and set the theme key:
+
+{
+    // other preferences above...
+    "theme": "Freesia.sublime-theme"
+}
+
+(Press Ctrl+S to save the change.)  "theme" is the setting attribute that refers to a file containing all the information about how the user interface appears on your monitor.  The default value is "Default.sublime-theme", and that file lives in the "Theme - Default.sublime-theme", along with the all the image files for the default theme.  You've just replaced the default user interface theme with the Freesia user interface theme, as defined in "Freesia.sublime-theme".  How do you like the new look?   This 
+Recall I mentioned above that 
+
 
 
 
