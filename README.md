@@ -41,11 +41,51 @@ This will install directory 'st-theme-freesia' in Packages along with some sub-d
     "theme": "Freesia.sublime-theme"
 }
 
-(Press Ctrl+S to save the change.)  "theme" is the setting attribute that refers to a file containing all the information about how the user interface appears on your monitor.  The default value is "Default.sublime-theme", and that file lives in the "Theme - Default.sublime-theme", along with the all the image files for the default theme.  You've just replaced the default user interface theme with the Freesia user interface theme, as defined in "Freesia.sublime-theme".  How do you like the new look?   This 
-Recall I mentioned above that 
+(Press Ctrl+S to save the change.)  "theme" is the setting attribute that refers to a file containing all the information about how the user interface appears on your monitor.  The default value is "Default.sublime-theme", and that file lives in the "Theme - Default.sublime-theme", along with the all the image files for the default theme.  You've just replaced the default user interface theme with the Freesia user interface theme, as defined in "Freesia.sublime-theme".  How do you like the new look?   This method is much faster than editing up to two dozen individual image files; your ST community has done much of the grunt work in creating new looks, tried them out and tweeked them to achieve an harmonious appearance for the user interface.  Many started out as you are now - trying to make the stock scroll puck stand out a little more, and in so doing became immersed in modifying other elements of the user interface until they had something they liked.
+
+Recall I mentioned above that there are two methods to modifying the scroll bar and puck appearance (not counting wholesale replacement of ui theme package :-).  Extract file "Default.sublime-theme" from package "Theme - Default.sublime-theme" using your archive tool.  Remember, the .sublime-theme files control the appearance of the user interface.  Files with the suffix .tmTheme control the appearance or theme of the source code you edit.  Both are termed themes in the ST universe, so at first it may be confusing.
+
+Now, you can open and modify the extracted file with ST3, or with some other editor such as Antechinus JavaScript Editor, Notepad++, Wordpad etc.  Since I was auditioning editors I used all three.  You will no doubt recognize that what you are looking at is JSON source.  Take a moment to look at it and see the patterns: each object has a name given in the "class" attribute, and many have various layer attributes (layer0. texture, layer0.opacity, layer0.inner_margin, etc.).  Since the text theme file is coded in XML, this gives you a good opportunity to compare the two encoding syntaxes.  I find JSON far more intuitive and easy to understand; I think Douglas Crawford has done those of us who program for the Internet a world of good. 
+
+Scroll down to class "puck_control":
+
+    {
+        "class": "puck_control",
+        "layer0.texture": "Theme - Default/normal_thumb_vertical.png",
+        "layer0.opacity": 1.0,
+        "layer0.inner_margin": [2, 3],
+        "content_margin": [6, 0],
+        "blur": true
+    },
+
+In this object you can see the use of the puck file you modified earlier, to be found in the "Theme - Default" package.  Now modify the object as follow:
+
+    {
+
+        "class": "puck_control",
+	"layer0.texture": "",
+	"layer0.tint": [192, 32, 32],
+	"layer0.opacity": 1.0,
+	"blur": false
+    },
+
+Notice that the texture file containing the puck template image is no longer being used.  Instead, the puck is simply tinted a medium red: RGB = [192, 32, 32].  More information is available at http://sublimetext.userecho.com/topic/116003-make-the-scrollbar-markerindicator-more-visible/# which also describes how to make the scroll bar wider or narrower, as you prefer.
+
+Another change you can make is to the colour of the scroll bar race.  In class "scroll_bar_control" I've made the race a medium gray:
+
+    {
+        "class": "scroll_bar_control",
+        "layer0.texture": "",			//Theme - Default/normal_bar_vertical.png",
+        "layer0.opacity": 1.0,
+        "layer0.tint": [100, 100, 100],
+        "layer0.inner_margin": [0, 6],
+        "blur": false
+    },
+
+(The scroll bar control object is just above the puck control object in the Default theme file.)
+
+Both the text and the ui theme files contain quite a few settings.  While not an impossibly large number to learn, if you want to do much cusomization of yoru ST installation, you'll need to invest some time, probably a couple of weeks.  This learning curve, made shallow, by the paucity of documentation for both kinds of theme settings, is the only serious criticism I've run across of Sublime Theme.
 
 
 
 
-
-other is to 
