@@ -31,15 +31,15 @@ I mentioned the two puck files normal_thumb_vertical.png and normal_thumb_horizo
 
 You can modify any of the image files in the Theme - Default file this way to suit yourself.  Unless you're into computer graphic art with top notch tools, you may find this a bit tedious and painstaking.  You might want first to try out some of the other ui theme packages for ST.  Most can can be found on Git Hub and installed with the ST add-on Package Control tool.  I'll show you how to install and load this tool later.  Meanwhile, there's a simple manual workaround you can use. If you haven't already, install git on your workstation and open a Git Bash shell.  Enter:
 
-$ cd /path/to/sublime/Packages  (e.g. /Program Files/Sublime Text 3/Packages - whatever your actual path is.)
-$ git clone git@github.com:nilium/st-theme-freesia.git
+	$ cd /path/to/sublime/Packages  (e.g. /Program Files/Sublime Text 3/Packages - whatever your actual path is.)
+	$ git clone git@github.com:nilium/st-theme-freesia.git
 
 This will install directory 'st-theme-freesia' in Packages along with some sub-directories containing image files for the various widgets on the user interface.  With the freesia repository cloned, you can now hop into your preferences and set the theme key:
 
-{
-    // other preferences above...
-    "theme": "Freesia.sublime-theme"
-}
+	{
+	    // other preferences above...
+	    "theme": "Freesia.sublime-theme"
+	}
 
 (Press Ctrl+S to save the change.)  "theme" is the setting attribute that refers to a file containing all the information about how the user interface appears on your monitor.  The default value is "Default.sublime-theme", and that file lives in the "Theme - Default.sublime-theme", along with the all the image files for the default theme.  You've just replaced the default user interface theme with the Freesia user interface theme, as defined in "Freesia.sublime-theme".  How do you like the new look?   This method is much faster than editing up to two dozen individual image files; your ST community has done much of the grunt work in creating new looks, tried them out and tweeked them to achieve an harmonious appearance for the user interface.  Many started out as you are now - trying to make the stock scroll puck stand out a little more, and in so doing became immersed in modifying other elements of the user interface until they had something they liked.
 
