@@ -128,7 +128,7 @@
     },
     {
         "class": "puck_control",
-        "layer0.texture": "Theme - Default/KCS_normal_thumb_vertical.png",
+        "layer0.texture": "Theme - Default/KCPS_normal_thumb_vertical.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [2, 3],
         "content_margin": [6, 0],
