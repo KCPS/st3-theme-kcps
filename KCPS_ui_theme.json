@@ -137,10 +137,10 @@
     {
         "class": "puck_control",
         "attributes": ["horizontal"],
-        "layer0.texture": "Theme - Default/normal_thumb_horizontal.png",
+        "layer0.texture": "st3-theme-kcps/KCPS_normal_thumb_horizontal.png",
         "layer0.opacity": 1.0,
         "layer0.inner_margin": [0, 2],
-        "layer0.tint": [51, 204, 250],
+        //	"layer0.tint": [51, 204, 250],
         "content_margin": [12, 8],
         "blur": false
     },
